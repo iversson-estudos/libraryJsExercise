@@ -79,12 +79,17 @@ function newBook(){
 function showBooks(){
 
     const booksDisplay = document.getElementsByClassName('books')[0];
-
+    
+    while (booksDisplay.childNodes.length > 2){
+        booksDisplay.removeChild(booksDisplay.lastChild);
+    }
+    
     for(i=0;i<myLibrary.length;i++){
         const bookToBeAdded = document.createElement('p');
         bookToBeAdded.textContent = myLibrary[i].name;
         booksDisplay.appendChild(bookToBeAdded);
     }
+
 }
 
 
