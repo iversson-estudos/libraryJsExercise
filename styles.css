@@ -77,11 +77,35 @@ table {
     .buttons{
         grid-row: 2/3;
         background-color: grey;
+
+
+        button{
+
+            background-color: grey;
+            border: 0;
+
+            .material-symbols-outlined {
+            padding: 10px;  
+            padding-left: 20px;  
+            font-size: 48px;
+
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+           }
+        }
     }
 
     .display{
         grid-row: 3/4;
         background-color: grey;
+        display: grid;
+
+        .bookTable{
+
+        }
     }
 }
     
