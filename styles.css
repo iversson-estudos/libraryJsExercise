@@ -56,6 +56,15 @@ table {
 
 /* START OF CSS */
 
+/*  VARIABLES */
+
+:root {
+    --bg-color: grey;
+    --font-color: black;
+}
+
+
+
  
 
 
@@ -76,12 +85,12 @@ table {
 
     .buttons{
         grid-row: 2/3;
-        background-color: grey;
+        background-color: var(--bg-color);
 
 
         button{
 
-            background-color: grey;
+            background-color: var(--bg-color);
             border: 0;
 
             .material-symbols-outlined {
@@ -100,11 +109,12 @@ table {
 
     .display{
         grid-row: 3/4;
-        background-color: grey;
-        display: grid;
-
+        background-color: var(--bg-color);    
+        
         .bookTable{
-
+            width: 100vw;
+            text-align: center;
+            
         }
     }
 }
