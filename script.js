@@ -132,20 +132,20 @@ function showBooks(){
     bookTableBody.innerHTML='';
     formatsTableReadStatus();
 
-    
-
     library.forEach(book => {
         const row = document.createElement('tr');
-
+        const deleteBtnHtml = document.createElement('td');
+        deleteBtnHtml.innerHTML= '<button class="deleteBtn" onclick="deleteBook()"><span class="material-symbols-outlined">delete</span></button>';
+        
         Object.values(book).forEach( value => {
             const data = document.createElement('td');
             data.innerHTML = value;
             row.appendChild(data);
         })
+
+        row.appendChild(deleteBtnHtml);
         bookTableBody.appendChild(row);
     });
-    
-
 }
 
 const emojiPositive = "✅";
