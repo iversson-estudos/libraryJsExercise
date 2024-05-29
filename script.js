@@ -135,7 +135,7 @@ function showBooks(){
     library.forEach(book => {
         const row = document.createElement('tr');
         const deleteBtnHtml = document.createElement('td');
-        deleteBtnHtml.innerHTML= '<button class="deleteBtn" onclick="deleteBook()"><span class="material-symbols-outlined">delete</span></button>';
+        deleteBtnHtml.innerHTML= '<button class="deleteBtn" onclick="deleteBook(this)"><span class="material-symbols-outlined">delete</span></button>';
         
         Object.values(book).forEach( value => {
             const data = document.createElement('td');
@@ -161,3 +161,12 @@ function formatsTableReadStatus (){
         else    {book.hasBeenRead = emojiNegative;}
     })
 }
+
+function deleteBook(button) {
+    const bookCell = button.parentElement;
+    const rowCell = bookCell.parentElement;
+    rowCell.remove();
+}
+
+
+
