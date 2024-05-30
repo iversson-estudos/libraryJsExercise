@@ -169,4 +169,9 @@ function deleteBook(button) {
 }
 
 
+function showModal(button){
+    const pai = button.parentElement;
+    const dialog = pai.querySelector('dialog');
+    dialog.showModal();
+}
 
