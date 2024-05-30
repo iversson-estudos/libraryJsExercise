@@ -125,6 +125,8 @@ table {
             width: 100vw;
             text-align: center;
 
+            
+
             tbody{
 
                 tr{                   
@@ -161,15 +163,8 @@ table {
             }
         }
     }
-
+}
 
 table, thead,tbody, tr, td ,th {
     border: 4px solid black;
 }
-        
-
-    
-
-   
-
-
