@@ -1,4 +1,6 @@
 
+
+
 const library = [
     {
         name: "To Kill a Mockingbird",
@@ -116,12 +118,13 @@ const library = [
 
 
 
-function Book(name, pages, author, publicationDate){
+function Book(name, pages, author, publicationDate,readed){
+
     this.name = name;
     this.pages = pages;
     this.author = author;
     this.publicationDate = publicationDate;
-    this.read = 0;
+    this.hasBeenRead = readed;
 }
 
 
@@ -148,11 +151,12 @@ function showBooks(){
     });
 }
 
-const emojiPositive = "✅";
-const emojiNegative = "❌";
 
 
 function formatsTableReadStatus (){
+    const emojiPositive = "✅";
+    const emojiNegative = "❌";
+
     library.forEach(book=> {
         
         if(book.hasBeenRead == true || book.hasBeenRead == emojiPositive)
@@ -169,9 +173,28 @@ function deleteBook(button) {
 }
 
 
-function showModal(button){
-    const pai = button.parentElement;
-    const dialog = pai.querySelector('dialog');
+
+function openBookForm(){
+    const dialog = document.querySelector('dialog');
     dialog.showModal();
 }
 
+function addBook(event){
+    event.preventDefault();
+    const dialog = document.querySelector('dialog');
+    
+    const form = document.getElementById('addBookForm');
+    const inputs = form.querySelectorAll('input');
+    
+    //GETS DATA FROM BOOK FORM
+    const name = inputs[0].value;
+    const pages = inputs[1].value;
+    const author = inputs[2].value;
+    const pubDate = inputs[3].value;
+    const readed = inputs[4].checked;
+
+    //CREATES NEW BOOK
+    library.push(new Book(name,pages,author,pubDate,readed));
+    dialog.close();
+    showBooks();
+}
