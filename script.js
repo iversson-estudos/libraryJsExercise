@@ -169,7 +169,17 @@ function formatsTableReadStatus (){
 function deleteBook(button) {
     const bookCell = button.parentElement;
     const rowCell = bookCell.parentElement;
-    rowCell.remove();
+    const book = rowCell.getElementsByTagName('td');
+    const bookName = book[0].textContent;
+
+
+    for(i=0 ; i<library.length;i++){
+
+        if(library[i].name == bookName){
+            library.splice(i,1);
+        }
+    }
+    showBooks();
 }
 
 
@@ -193,8 +203,35 @@ function addBook(event){
     const pubDate = inputs[3].value;
     const readed = inputs[4].checked;
 
+    
+
+    // Validation checks for name, pages, and author
+    if (isInvalid(name)) {
+        alert("Name is invalid.");
+        return;
+    }
+
+    if (isInvalid(pages)) {
+        alert("Pages are invalid.");
+        return;
+    }
+
+    if (isInvalid(author)) {
+        alert("Author is invalid.");
+        return;
+    }
+
+
+
+
+
     //CREATES NEW BOOK
     library.push(new Book(name,pages,author,pubDate,readed));
+    form.reset(); 
     dialog.close();
     showBooks();
+}
+
+function isInvalid(value) {
+    return value === null || value === undefined || value === '';
 }
