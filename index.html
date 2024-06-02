@@ -39,18 +39,32 @@
     </div>
         <dialog>
             <form id="addBookForm">
-                <p>Book Name</p>
-                <input type="text" name="name" required>
-                <p>Number of Pages</p>
-                <input type="number" name="pages" required>
-                <p>Author Name</p>
-                <input type="text" name="author" required>
-                <p>Released in year</p>
-                <input type="number" max="2030" min="0" step="1" value="2024">
-                <p>Have you readed it yet?</p>
-                <input type="checkbox" name="readed">
-                <button type="reset">RESET</button>
-                <button type="submit" onclick="addBook(event)">ADD BOOK</button>
+                <div>
+                    <p>Book Name</p>
+                    <input type="text" name="name" required>
+                </div>
+                <div>
+                    <p>Number of Pages</p>
+                    <input type="number" name="pages" required>
+                </div>
+                <div>
+                    <p>Author Name</p>
+                    <input type="text" name="author" required>
+                </div>
+                <div>
+                    <p>Released in year</p>
+                    <input type="number" max="2030" min="0" step="1" value="2024">
+                </div>
+                 <div class="checkbox">
+                        <p>Have you readed it yet?</p>
+                        <input type="checkbox" name="readed">
+                </div>
+                <div>
+                    <button type="reset">
+                        <span class="material-symbols-outlined">restart_alt</span>
+                    </button>
+                    <button type="submit" onclick="addBook(event)">ADD BOOK</button>
+                </div>
             </form>
         </dialog>
 </body>
